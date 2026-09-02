@@ -1,0 +1,1272 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Orbitron:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  background: #FFF9ED;
+  color: #201A32;
+  font-family: "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button, input, select, textarea { font: inherit; }
+
+.badge-chip { font-family: "Space Grotesk", sans-serif; letter-spacing: 0.04em; }
+.section-kicker {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #7028EF;
+  font-weight: 700;
+}
+.section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.04;
+  font-weight: 700;
+  color: #21153F;
+  margin-top: .55rem;
+  letter-spacing: -0.035em;
+}
+.body-copy {
+  color: rgba(32,26,50,.68);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.75;
+  max-width: 620px;
+}
+.gradient-text {
+  background: linear-gradient(100deg, #7028EF 0%, #9A45FF 55%, #FF5A60 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.gradient-text-warm {
+  background: linear-gradient(100deg, #FF5A60 0%, #FF8C5A 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.feature-card {
+  border: 1px solid #E8E0D3;
+  border-radius: 1.25rem;
+  background: #FFFDF8;
+  padding: 1.5rem;
+  min-height: 210px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(112,40,239,.28);
+  box-shadow: 0 20px 42px rgba(54,31,93,.10);
+}
+.icon-box {
+  width: 42px; height: 42px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+a, button, input, select { -webkit-tap-highlight-color: transparent; }
+input::placeholder { color: rgba(32,26,50,.38); }
+select { color: #201A32; }
+
+/* New VITPEERS visual language: electric purple + coral + lime + warm cream. */
+.vp-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 15%, rgba(183,255,0,.28), transparent 22%),
+    radial-gradient(circle at 62% 78%, rgba(255,90,96,.18), transparent 26%),
+    linear-gradient(135deg, #FFF9ED 0%, #F7F0FF 52%, #FFF8EF 100%);
+}
+.vp-hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -160px;
+  top: -190px;
+  border-radius: 999px;
+  background: #7028EF;
+  opacity: .95;
+  filter: blur(2px);
+}
+.vp-hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: -110px;
+  bottom: -120px;
+  border-radius: 999px;
+  background: #B7FF00;
+  opacity: .65;
+  filter: blur(12px);
+}
+.vp-hero-grid { position: relative; z-index: 1; }
+.vp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: #4B3375;
+  background: rgba(255,255,255,.74);
+  border: 1px solid rgba(112,40,239,.14);
+  box-shadow: 0 8px 25px rgba(52,32,82,.06);
+}
+.vp-eyebrow::before {
+  content: "";
+  width: 8px; height: 8px; border-radius: 999px;
+  background: #B7FF00;
+  box-shadow: 0 0 0 4px rgba(183,255,0,.18);
+}
+.vp-hero-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: -.055em;
+  color: #21153F;
+}
+.vp-hero-copy { color: #4E4660; }
+.vp-primary-btn {
+  background: linear-gradient(135deg, #FF5A60, #FF7A5A);
+  box-shadow: 0 14px 28px rgba(255,90,96,.25);
+}
+.vp-secondary-btn {
+  background: #21153F;
+  color: white;
+  box-shadow: 0 12px 24px rgba(33,21,63,.14);
+}
+.vp-stat {
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(112,40,239,.10);
+  box-shadow: 0 10px 24px rgba(43,28,74,.06);
+}
+.vp-stat-accent { color: #7028EF; }
+.vp-visual-card {
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(255,255,255,.8);
+  box-shadow: 0 28px 70px rgba(45,25,82,.18);
+  backdrop-filter: blur(16px);
+}
+.vp-visual-orbit { border: 1px dashed rgba(112,40,239,.28); }
+.vp-lime { background: #B7FF00; color: #21153F; }
+.vp-coral { background: #FF5A60; color: white; }
+.vp-purple { background: #7028EF; color: white; }
+
+.vp-trust {
+  border: 1px solid #E8E0D3;
+  background: rgba(255,253,248,.94);
+  box-shadow: 0 22px 50px rgba(44,26,72,.10);
+}
+.vp-section-soft { background: #FFF9ED; }
+.vp-section-lilac { background: #F7F0FF; }
+.vp-section-dark {
+  background: linear-gradient(135deg, #21153F 0%, #43218A 55%, #7028EF 100%);
+}
+.vp-lime-line { border-color: rgba(183,255,0,.35); }
+
+/* Keep all existing app pages consistent with the new typography. */
+.font-display { font-family: "Space Grotesk", sans-serif !important; }
+.font-body { font-family: "DM Sans", sans-serif !important; }
+
+/* Smooth "butter" cross-fade whenever the active world changes. */
+@media (prefers-reduced-motion: no-preference) {
+  html { transition: background-color .35s ease; }
+  body, .vp-page-shell, .bg-vm-gradient, .feature-card, .vp-stat, .vp-trust,
+  .vp-visual-card, .campus-card, .vp-world-card, .bg-white, .bg-paper {
+    transition: background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 1; transform: none; }
+  .reveal.reveal-visible { animation: reveal .65s ease both; }
+  @keyframes reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .scroll-reveal { opacity: 1; transform: none; }
+  .scroll-reveal.is-visible { animation: reveal .68s cubic-bezier(.2,.75,.25,1) both; }
+  .float-slow { animation: float 6s ease-in-out infinite; }
+  .float-slower { animation: float 8s ease-in-out infinite 1s; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .twinkle { animation: twinkle 2.4s ease-in-out infinite; }
+  @keyframes twinkle { 0%, 100% { opacity: .4; transform: scale(.9); } 50% { opacity: 1; transform: scale(1.1); } }
+  .dash-flow { stroke-dasharray: 6 6; animation: dashFlow 3s linear infinite; }
+  @keyframes dashFlow { to { stroke-dashoffset: -60; } }
+}
+
+.lift-card,.lift-card-soft,.lift-card-dark{will-change:transform;transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .28s ease,border-color .28s ease,background-color .28s ease}
+.lift-card:hover{transform:translateY(-8px) scale(1.015);box-shadow:0 24px 48px rgba(54,31,93,.13);border-color:rgba(112,40,239,.28)}
+.lift-card-soft:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(54,31,93,.11);border-color:rgba(255,90,96,.30)}
+.lift-card-dark:hover{transform:translateX(5px);background-color:rgba(255,255,255,.15);border-color:rgba(255,255,255,.22)}
+.campus-band{position:relative;overflow:hidden;background:radial-gradient(circle at 10% 15%,rgba(112,40,239,.10),transparent 28%),radial-gradient(circle at 90% 75%,rgba(255,90,96,.10),transparent 28%),linear-gradient(180deg,#f7f0ff 0%,#fff9ed 100%)}
+.campus-card{position:relative;overflow:hidden;border:1px solid rgba(33,21,63,.09);border-radius:1.5rem;padding:1.35rem;min-height:245px}
+.campus-blue{background:linear-gradient(145deg,#eee8ff,#fbf9ff)} .campus-green{background:linear-gradient(145deg,#f1ffd8,#fbfff5)} .campus-yellow{background:linear-gradient(145deg,#fff0ed,#fffaf5)} .campus-red{background:linear-gradient(145deg,#ffe9ed,#fff9fa)}
+#about{background:radial-gradient(circle at 85% 25%,rgba(112,40,239,.07),transparent 24%),#fff9ed}
+#why{background:radial-gradient(circle at 10% 10%,rgba(183,255,0,.12),transparent 25%),radial-gradient(circle at 90% 90%,rgba(112,40,239,.07),transparent 25%),#fff}
+#how{background:linear-gradient(180deg,#fff 0%,#f7f0ff 100%)}
+#journey{background:radial-gradient(circle at 20% 20%,rgba(183,255,0,.10),transparent 25%),radial-gradient(circle at 80% 80%,rgba(255,90,96,.08),transparent 25%),#fff9ed}
+#community{background:radial-gradient(circle at 20% 50%,rgba(112,40,239,.08),transparent 25%),#fff}
+@media (prefers-reduced-motion:no-preference){.feature-card:hover .icon-box{transform:rotate(-5deg) scale(1.08);transition:transform .3s ease}.feature-card:hover h3{color:#7028EF;transition:color .2s ease}}
+
+/* ============================================================
+   VITPEERS — Four Interactive Visual Worlds
+   Minimal (default) uses the base styles above unchanged.
+   Spider / F1 / Cyber repaint the SAME components via [data-theme]
+   attribute selectors — no page markup is duplicated.
+   ============================================================ */
+
+/* Orbitron + JetBrains Mono are combined into the top import above. */
+
+[data-theme="spider"] body { background: #0B0E1A; color: #EDEBFF; }
+[data-theme="f1"] body      { background: #0A0A0C; color: #F4F4F4; }
+[data-theme="cyber"] body   { background: #0A0714; color: #E8E2FF; }
+
+/* --- shared dark-world helpers --- */
+[data-theme="spider"] .vp-section-soft,
+[data-theme="spider"] #about,
+[data-theme="spider"] #why,
+[data-theme="spider"] #how,
+[data-theme="spider"] #journey,
+[data-theme="spider"] #community,
+[data-theme="spider"] .vp-section-lilac {
+  background: radial-gradient(circle at 15% 20%, rgba(255,59,59,.10), transparent 30%),
+              radial-gradient(circle at 85% 80%, rgba(60,90,255,.10), transparent 30%),
+              #0B0E1A !important;
+}
+[data-theme="f1"] .vp-section-soft,
+[data-theme="f1"] #about,
+[data-theme="f1"] #why,
+[data-theme="f1"] #how,
+[data-theme="f1"] #journey,
+[data-theme="f1"] #community,
+[data-theme="f1"] .vp-section-lilac {
+  background:
+    repeating-linear-gradient(115deg, rgba(255,255,255,.025) 0 2px, transparent 2px 26px),
+    #0A0A0C !important;
+}
+[data-theme="cyber"] .vp-section-soft,
+[data-theme="cyber"] #about,
+[data-theme="cyber"] #why,
+[data-theme="cyber"] #how,
+[data-theme="cyber"] #journey,
+[data-theme="cyber"] #community,
+[data-theme="cyber"] .vp-section-lilac {
+  background:
+    linear-gradient(rgba(178,75,255,.06) 1px, transparent 1px) 0 0 / 100% 34px,
+    linear-gradient(90deg, rgba(178,75,255,.06) 1px, transparent 1px) 0 0 / 34px 100%,
+    #0A0714 !important;
+}
+
+/* --- nav / hero gradient --- */
+[data-theme="spider"] .bg-vm-gradient { background: linear-gradient(135deg, #0B0E1A 0%, #171226 55%, #2A0F16 100%) !important; border-bottom: 1px solid rgba(255,59,59,.18); }
+[data-theme="f1"] .bg-vm-gradient      { background: linear-gradient(135deg, #0A0A0C 0%, #16090A 55%, #250608 100%) !important; border-bottom: 1px solid rgba(225,6,0,.28); }
+[data-theme="cyber"] .bg-vm-gradient   { background: linear-gradient(135deg, #0A0714 0%, #1C0E33 55%, #2C0F45 100%) !important; border-bottom: 1px solid rgba(178,75,255,.28); }
+
+/* --- primary buttons --- */
+[data-theme="spider"] .bg-vm-warm, [data-theme="spider"] .vp-primary-btn { background: linear-gradient(135deg, #FF3B3B, #E10600) !important; box-shadow: 0 14px 28px rgba(255,59,59,.28) !important; }
+[data-theme="f1"] .bg-vm-warm, [data-theme="f1"] .vp-primary-btn         { background: linear-gradient(135deg, #E10600, #B00400) !important; box-shadow: 0 14px 28px rgba(225,6,0,.3) !important; border-radius: .5rem !important; }
+[data-theme="cyber"] .bg-vm-warm, [data-theme="cyber"] .vp-primary-btn   { background: linear-gradient(135deg, #B24BFF, #6F5CFF) !important; box-shadow: 0 0 24px rgba(178,75,255,.45) !important; }
+
+[data-theme="spider"] .vp-secondary-btn { background: #171226 !important; border: 1px solid rgba(255,59,59,.3); }
+[data-theme="f1"] .vp-secondary-btn     { background: #16090A !important; border: 1px solid rgba(225,6,0,.4); border-radius: .5rem !important; }
+[data-theme="cyber"] .vp-secondary-btn  { background: #170B2B !important; border: 1px solid rgba(178,75,255,.4); }
+
+/* --- cards, feature grid, campus band --- */
+[data-theme="spider"] .feature-card, [data-theme="spider"] .vp-stat, [data-theme="spider"] .vp-trust, [data-theme="spider"] .vp-visual-card { background: #131020 !important; border-color: rgba(255,59,59,.18) !important; color: #EDEBFF; }
+[data-theme="f1"] .feature-card, [data-theme="f1"] .vp-stat, [data-theme="f1"] .vp-trust, [data-theme="f1"] .vp-visual-card { background: #111112 !important; border-color: rgba(225,6,0,.25) !important; border-radius: .6rem !important; color: #F4F4F4; }
+[data-theme="cyber"] .feature-card, [data-theme="cyber"] .vp-stat, [data-theme="cyber"] .vp-trust, [data-theme="cyber"] .vp-visual-card { background: #170B2B !important; border-color: rgba(178,75,255,.35) !important; color: #E8E2FF; }
+
+[data-theme="spider"] .feature-card:hover { border-color: #FF3B3B !important; box-shadow: 0 0 0 1px rgba(255,59,59,.25), 0 20px 40px rgba(255,59,59,.15) !important; }
+[data-theme="f1"] .feature-card:hover     { border-color: #E10600 !important; box-shadow: 0 20px 40px rgba(225,6,0,.18) !important; transform: translateY(-4px) skewX(-0.5deg); }
+[data-theme="cyber"] .feature-card:hover  { border-color: #B24BFF !important; box-shadow: 0 0 30px rgba(178,75,255,.35) !important; }
+
+[data-theme="spider"] .campus-card, [data-theme="f1"] .campus-card, [data-theme="cyber"] .campus-card { border-color: rgba(255,255,255,.10) !important; }
+[data-theme="spider"] .campus-blue   { background: linear-gradient(145deg,#171226,#0B0E1A) !important; }
+[data-theme="spider"] .campus-green  { background: linear-gradient(145deg,#161c2e,#0B0E1A) !important; }
+[data-theme="spider"] .campus-yellow { background: linear-gradient(145deg,#241018,#0B0E1A) !important; }
+[data-theme="spider"] .campus-red    { background: linear-gradient(145deg,#2a0f16,#0B0E1A) !important; }
+[data-theme="f1"] .campus-card { background: linear-gradient(145deg,#111112,#0A0A0C) !important; border-radius: .6rem !important; }
+[data-theme="cyber"] .campus-card { background: rgba(23,11,43,.6) !important; }
+
+/* --- typography / text colors --- */
+[data-theme="spider"] .section-title, [data-theme="f1"] .section-title, [data-theme="cyber"] .section-title { color: #F4F2FF !important; }
+[data-theme="f1"] .section-title { font-family: "Orbitron", "Space Grotesk", sans-serif !important; text-transform: uppercase; }
+[data-theme="cyber"] .section-title, [data-theme="cyber"] .badge-chip { font-family: "JetBrains Mono", monospace !important; }
+[data-theme="spider"] .body-copy, [data-theme="f1"] .body-copy, [data-theme="cyber"] .body-copy { color: rgba(237,235,255,.62) !important; }
+[data-theme="spider"] .gradient-text { background: linear-gradient(100deg,#FF3B3B,#FF7A7A) !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+[data-theme="f1"] .gradient-text     { background: linear-gradient(100deg,#E10600,#FF6A5A) !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+[data-theme="cyber"] .gradient-text  { background: linear-gradient(100deg,#B24BFF,#54D9FF) !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+[data-theme="spider"] .gradient-text-warm { background: linear-gradient(100deg,#FF3B3B,#FF8C5A) !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+[data-theme="f1"] .gradient-text-warm     { background: linear-gradient(100deg,#E10600,#FF8A5A) !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+[data-theme="cyber"] .gradient-text-warm  { background: linear-gradient(100deg,#B24BFF,#54D9FF) !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+[data-theme="spider"] .section-kicker { color: #FF6A6A !important; }
+[data-theme="f1"] .section-kicker     { color: #FF3B2E !important; font-family: "Orbitron", sans-serif !important; }
+[data-theme="cyber"] .section-kicker  { color: #54D9FF !important; font-family: "JetBrains Mono", monospace !important; }
+
+/* --- borders / inputs across auth + form pages --- */
+[data-theme="spider"] .border-line { border-color: rgba(255,59,59,.22) !important; }
+[data-theme="f1"] .border-line      { border-color: rgba(225,6,0,.3) !important; }
+[data-theme="cyber"] .border-line   { border-color: rgba(178,75,255,.35) !important; }
+[data-theme="spider"] input, [data-theme="spider"] select, [data-theme="spider"] textarea,
+[data-theme="f1"] input, [data-theme="f1"] select, [data-theme="f1"] textarea,
+[data-theme="cyber"] input, [data-theme="cyber"] select, [data-theme="cyber"] textarea {
+  background: rgba(255,255,255,.04) !important; color: inherit !important;
+}
+[data-theme="spider"] input:focus, [data-theme="spider"] select:focus, [data-theme="spider"] textarea:focus { outline: 2px solid #FF3B3B; }
+[data-theme="f1"] input:focus, [data-theme="f1"] select:focus, [data-theme="f1"] textarea:focus { outline: 2px solid #E10600; }
+[data-theme="cyber"] input:focus, [data-theme="cyber"] select:focus, [data-theme="cyber"] textarea:focus { outline: 2px solid #B24BFF; box-shadow: 0 0 14px rgba(178,75,255,.4); }
+/* Any card using the plain .bg-white utility (campus detail panel, why-cards,
+   journey cards, final CTA section, etc.) needs a matching SOLID dark surface
+   here — because .text-navy/.text-ink elsewhere on this page are forced to a
+   light color for dark worlds (see further below). Solid colors (not
+   translucent) avoid the earlier bug where near-transparent backgrounds left
+   light text with nothing dark behind it to contrast against. */
+[data-theme="spider"] .bg-white:not(.vp-preview-card) { background: #131020 !important; }
+[data-theme="f1"] .bg-white:not(.vp-preview-card)      { background: #111112 !important; }
+[data-theme="cyber"] .bg-white:not(.vp-preview-card)   { background: #170B2B !important; }
+
+/* --- subtle world texture (behind hero, low-opacity, non-distracting) --- */
+[data-theme="spider"] .vp-hero { background: radial-gradient(circle at 80% 10%, rgba(255,59,59,.18), transparent 35%), radial-gradient(circle at 10% 90%, rgba(60,90,255,.12), transparent 35%), #0B0E1A !important; }
+[data-theme="spider"] .vp-hero::before { background: #FF3B3B !important; opacity: .5 !important; }
+[data-theme="spider"] .vp-hero::after  { background: #3C5AFF !important; opacity: .3 !important; }
+
+[data-theme="f1"] .vp-hero { background: repeating-linear-gradient(120deg, rgba(255,255,255,.03) 0 2px, transparent 2px 30px), linear-gradient(135deg,#0A0A0C,#1A0304) !important; }
+[data-theme="f1"] .vp-hero::before { background: #E10600 !important; opacity: .4 !important; }
+[data-theme="f1"] .vp-hero::after  { background: #FFFFFF !important; opacity: .06 !important; }
+
+[data-theme="cyber"] .vp-hero {
+  background:
+    linear-gradient(rgba(178,75,255,.08) 1px, transparent 1px) 0 0 / 100% 32px,
+    linear-gradient(90deg, rgba(178,75,255,.08) 1px, transparent 1px) 0 0 / 32px 100%,
+    #0A0714 !important;
+}
+[data-theme="cyber"] .vp-hero::before { background: #B24BFF !important; opacity: .45 !important; }
+[data-theme="cyber"] .vp-hero::after  { background: #54D9FF !important; opacity: .3 !important; }
+
+/* ---------- Themed notification bubble variants ---------- */
+.tn-minimal { background: #fff; border: 1px solid #E8E0D3; color: #201A32; border-radius: 1rem; }
+.tn-spider  { background: #171226; border: 1px solid #FF3B3B; color: #fff; border-radius: 1rem 1rem 1rem .2rem; font-weight: 600; }
+.tn-f1      { background: #111112; border-left: 4px solid #E10600; color: #fff; border-radius: .3rem; font-family: "Orbitron","Space Grotesk",sans-serif; letter-spacing: .04em; text-transform: uppercase; font-size: .8rem; }
+.tn-cyber   { background: rgba(23,11,43,.9); border: 1px solid #B24BFF; color: #E8E2FF; border-radius: .4rem; font-family: "JetBrains Mono", monospace; font-size: .82rem; box-shadow: 0 0 18px rgba(178,75,255,.35); }
+
+/* ---------- Login intro sequences ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .vp-intro-overlay { animation: vpIntroFade .55s ease forwards; }
+  @keyframes vpIntroFade { 0% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+
+  .vp-spider-swing { animation: vpSwing .7s cubic-bezier(.34,1.56,.64,1) both; }
+  @keyframes vpSwing { 0% { transform: translate(-40vw,-40vh) rotate(-25deg); opacity:0; } 60% { opacity:1; } 100% { transform: translate(0,0) rotate(0deg); opacity:1; } }
+
+  .vp-f1-bar-fill { animation: vpBarFill .9s ease forwards; }
+  @keyframes vpBarFill { from { width: 0%; } to { width: 100%; } }
+  .vp-f1-light { animation: vpLightUp .25s ease forwards; }
+  @keyframes vpLightUp { from { background: #2A0304; } to { background: #E10600; box-shadow: 0 0 14px #E10600; } }
+
+  .vp-cyber-type { overflow: hidden; white-space: nowrap; animation: vpType 1.1s steps(28, end) both; }
+  @keyframes vpType { from { width: 0; } to { width: 100%; } }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .vp-mascot-idle { animation: vpMascotBob 2.6s ease-in-out infinite; }
+  @keyframes vpMascotBob {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-3deg); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vp-mascot-idle { animation: none; }
+  .vp-intro-overlay { animation: none; opacity: 0; visibility: hidden; }
+}
+
+/* ---------- Global text-color adaptation for dark worlds ----------
+   Many pages (Login, Discover, Profile, Messages, etc.) use fixed
+   Tailwind text-navy / text-ink utility classes. Rather than rewriting
+   every page, repaint the common ones so text stays readable in the
+   three dark worlds without touching component markup. */
+[data-theme="spider"] .text-navy, [data-theme="f1"] .text-navy, [data-theme="cyber"] .text-navy,
+[data-theme="spider"] .text-ink, [data-theme="f1"] .text-ink, [data-theme="cyber"] .text-ink {
+  color: #F4F2FF !important;
+}
+[data-theme="spider"] .text-ink\/80, [data-theme="f1"] .text-ink\/80, [data-theme="cyber"] .text-ink\/80,
+[data-theme="spider"] .text-ink\/70, [data-theme="f1"] .text-ink\/70, [data-theme="cyber"] .text-ink\/70,
+[data-theme="spider"] .text-ink\/65, [data-theme="f1"] .text-ink\/65, [data-theme="cyber"] .text-ink\/65 {
+  color: rgba(244,242,255,.78) !important;
+}
+[data-theme="spider"] .text-ink\/60, [data-theme="f1"] .text-ink\/60, [data-theme="cyber"] .text-ink\/60,
+[data-theme="spider"] .text-ink\/55, [data-theme="f1"] .text-ink\/55, [data-theme="cyber"] .text-ink\/55 {
+  color: rgba(244,242,255,.62) !important;
+}
+[data-theme="spider"] .text-ink\/50, [data-theme="f1"] .text-ink\/50, [data-theme="cyber"] .text-ink\/50,
+[data-theme="spider"] .text-ink\/45, [data-theme="f1"] .text-ink\/45, [data-theme="cyber"] .text-ink\/45,
+[data-theme="spider"] .text-ink\/40, [data-theme="f1"] .text-ink\/40, [data-theme="cyber"] .text-ink\/40,
+[data-theme="spider"] .text-ink\/30, [data-theme="f1"] .text-ink\/30, [data-theme="cyber"] .text-ink\/30 {
+  color: rgba(244,242,255,.42) !important;
+}
+[data-theme="spider"] label, [data-theme="f1"] label, [data-theme="cyber"] label { color: rgba(244,242,255,.7) !important; }
+
+/* Safety net: any element inside a dark world that wasn't explicitly
+   repainted above still inherits a readable default color instead of
+   silently staying near-invisible dark-on-dark. Explicit rules above
+   (which are more specific / use !important) still win where set. */
+[data-theme="spider"] #root, [data-theme="f1"] #root, [data-theme="cyber"] #root {
+  color: #F4F2FF;
+}
+
+
+/* ============================================================
+   VITPEERS — COMPLETE WORLD / CONTRAST / LANDING PASS
+   Spec-driven additions. These extend the existing classes and
+   deliberately do not change product copy, routes, or API logic.
+   ============================================================ */
+
+:root {
+  --vp-mx: 50vw;
+  --vp-my: 30vh;
+  --vp-panel-radius: 1.75rem;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+}
+#root::before,
+#root::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+#root::before { opacity: .9; }
+#root::after { opacity: .45; }
+#root > * { position: relative; z-index: 1; }
+
+/* Minimal: calm mesh / premium paper depth. */
+[data-theme="minimal"] #root::before {
+  background:
+    radial-gradient(circle at var(--vp-mx) var(--vp-my), rgba(112,40,239,.07), transparent 20%),
+    radial-gradient(circle at 10% 80%, rgba(255,90,96,.06), transparent 25%);
+}
+[data-theme="minimal"] #root::after {
+  background: linear-gradient(115deg, transparent 0 48%, rgba(112,40,239,.025) 50%, transparent 52%);
+  background-size: 42px 42px;
+}
+
+/* Spider: web-like geometry + comic-panel depth. */
+[data-theme="spider"] #root::before {
+  background:
+    radial-gradient(circle at var(--vp-mx) var(--vp-my), rgba(255,59,59,.13), transparent 18%),
+    repeating-radial-gradient(circle at 15% 20%, transparent 0 24px, rgba(255,255,255,.035) 25px 26px),
+    repeating-linear-gradient(45deg, transparent 0 48px, rgba(255,59,59,.035) 49px 50px),
+    #0B0E1A;
+}
+[data-theme="spider"] #root::after {
+  background:
+    linear-gradient(25deg, transparent 48%, rgba(60,90,255,.08) 49%, transparent 50%) 0 0 / 120px 120px,
+    linear-gradient(155deg, transparent 48%, rgba(255,59,59,.06) 49%, transparent 50%) 0 0 / 120px 120px;
+  animation: spiderWebDrift 16s linear infinite;
+}
+@keyframes spiderWebDrift { to { background-position: 120px 120px, -120px 120px; } }
+
+/* F1: carbon-fiber + moving speed lanes. */
+[data-theme="f1"] #root::before {
+  background:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.028) 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.018) 0 2px, transparent 2px 8px),
+    radial-gradient(circle at var(--vp-mx) var(--vp-my), rgba(225,6,0,.14), transparent 20%),
+    #0A0A0C;
+}
+[data-theme="f1"] #root::after {
+  background: repeating-linear-gradient(115deg, transparent 0 60px, rgba(225,6,0,.075) 61px 64px, transparent 65px 140px);
+  transform: translateX(-12%);
+  animation: f1Speed 2.4s linear infinite;
+}
+@keyframes f1Speed { to { transform: translateX(12%); } }
+
+/* Cyber: animated grid + scanline. */
+[data-theme="cyber"] #root::before {
+  background:
+    linear-gradient(rgba(178,75,255,.055) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgba(84,217,255,.045) 1px, transparent 1px) 0 0 / 32px 32px,
+    radial-gradient(circle at var(--vp-mx) var(--vp-my), rgba(178,75,255,.16), transparent 20%),
+    #0A0714;
+  animation: cyberGrid 12s linear infinite;
+}
+[data-theme="cyber"] #root::after {
+  background: repeating-linear-gradient(180deg, transparent 0 5px, rgba(84,217,255,.035) 6px 7px);
+  animation: cyberScan 5s linear infinite;
+}
+@keyframes cyberGrid { to { background-position: 0 32px, 32px 0, 0 0, 0 0; } }
+@keyframes cyberScan { from { transform: translateY(-12%); } to { transform: translateY(12%); } }
+
+/* World-specific interaction feedback. */
+.vp-world-fx { position: fixed; inset: 0; pointer-events: none; z-index: 60; overflow: hidden; }
+.vp-world-cursor {
+  position: fixed;
+  left: var(--vp-mx);
+  top: var(--vp-my);
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%,-50%);
+  border: 1px solid rgba(112,40,239,.42);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity .15s ease, width .15s ease, height .15s ease;
+}
+.vp-world-fx:hover .vp-world-cursor { opacity: .75; }
+[data-theme="spider"] .vp-world-cursor { border-color: #FF3B3B; box-shadow: 0 0 0 4px rgba(255,59,59,.08); }
+[data-theme="f1"] .vp-world-cursor { border-radius: 4px; border-color: #E10600; box-shadow: 0 0 12px rgba(225,6,0,.35); }
+[data-theme="cyber"] .vp-world-cursor { border-color: #54D9FF; box-shadow: 0 0 14px rgba(178,75,255,.4); }
+.vp-world-pulse {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  transform: translate(-50%,-50%);
+  animation: vpPulse .55s ease-out forwards;
+  color: #7028EF;
+}
+[data-theme="spider"] .vp-world-pulse { color: #FF3B3B; }
+[data-theme="f1"] .vp-world-pulse { color: #E10600; border-radius: 4px; }
+[data-theme="cyber"] .vp-world-pulse { color: #54D9FF; }
+@keyframes vpPulse { from { opacity: .8; width: 18px; height: 18px; } to { opacity: 0; width: 72px; height: 72px; } }
+
+/* Page shells solve the original light-background/dark-text mismatch. */
+.vp-page-shell {
+  background: #FFF9ED;
+  min-height: calc(100vh - 4rem);
+}
+.vp-selector-heading { color: #21153F; }
+.vp-selector-sub { color: #21153F; }
+[data-theme="spider"] .vp-selector-heading, [data-theme="f1"] .vp-selector-heading, [data-theme="cyber"] .vp-selector-heading { color: #F4F2FF !important; }
+[data-theme="spider"] .vp-selector-sub, [data-theme="f1"] .vp-selector-sub, [data-theme="cyber"] .vp-selector-sub { color: rgba(244,242,255,.72) !important; }
+.vp-page-shell-narrow { padding-bottom: 2rem; }
+.vp-page-shell-wide { padding-bottom: 2rem; }
+[data-theme="spider"] .vp-page-shell { background: #0B0E1A; }
+[data-theme="f1"] .vp-page-shell { background: #0A0A0C; }
+[data-theme="cyber"] .vp-page-shell { background: #0A0714; }
+
+/* Inner-page panels — background AND text must be set together, or a
+   still-light card ends up with near-invisible light-on-light text
+   (this was the root cause of every "text not visible" report). */
+[data-theme="spider"] .vp-page-shell .bg-white,
+[data-theme="spider"] .vp-page-shell .bg-paper {
+  background: #131020 !important;
+  color: #F4F2FF;
+}
+[data-theme="f1"] .vp-page-shell .bg-white,
+[data-theme="f1"] .vp-page-shell .bg-paper {
+  background: #111112 !important;
+  color: #F4F2FF;
+}
+[data-theme="cyber"] .vp-page-shell .bg-white,
+[data-theme="cyber"] .vp-page-shell .bg-paper {
+  background: #170B2B !important;
+  color: #E8E2FF;
+}
+/* Decorative always-white preview cards (hero mockups) must stay exempt —
+   they use fixed dark hex text meant for a permanently white card. */
+[data-theme="spider"] .vp-page-shell .bg-white.vp-preview-card,
+[data-theme="f1"] .vp-page-shell .bg-white.vp-preview-card,
+[data-theme="cyber"] .vp-page-shell .bg-white.vp-preview-card {
+  background: #fff !important;
+  color: inherit;
+}
+[data-theme="spider"] .vp-page-shell .border-line { border-color: rgba(255,59,59,.22) !important; }
+[data-theme="f1"] .vp-page-shell .border-line { border-color: rgba(225,6,0,.28) !important; }
+[data-theme="cyber"] .vp-page-shell .border-line { border-color: rgba(178,75,255,.34) !important; }
+
+/* Stronger inactive form fields — especially the phone field. */
+[data-theme="spider"] input,
+[data-theme="spider"] select,
+[data-theme="spider"] textarea { background: #171226 !important; border-color: rgba(255,59,59,.35) !important; }
+[data-theme="f1"] input,
+[data-theme="f1"] select,
+[data-theme="f1"] textarea { background: #111112 !important; border-color: rgba(225,6,0,.38) !important; }
+[data-theme="cyber"] input,
+[data-theme="cyber"] select,
+[data-theme="cyber"] textarea { background: #170B2B !important; border-color: rgba(178,75,255,.42) !important; }
+
+/* Landing page: elevated product-tour panels + ambient glow. */
+#about, #why, #how, #journey, #community, #cta-final {
+  position: relative;
+  isolation: isolate;
+}
+#about > div,
+#why > div,
+#how > div,
+#journey > div,
+#community > div,
+#cta-final > div {
+  position: relative;
+  isolation: isolate;
+}
+#about > div::before,
+#why > div::before,
+#how > div::before,
+#journey > div::before,
+#community > div::before,
+#cta-final > div::before {
+  content: "";
+  position: absolute;
+  inset: 12% 6%;
+  z-index: -1;
+  border-radius: 40px;
+  filter: blur(38px);
+  opacity: .45;
+  background: rgba(112,40,239,.12);
+}
+#about > div,
+#why > div,
+#how > div,
+#journey > div,
+#community > div,
+#cta-final > div {
+  border-radius: var(--vp-panel-radius);
+}
+#about > div { padding: 2.5rem; }
+#why > div, #how > div, #journey > div, #community > div, #cta-final > div { }
+[data-theme="minimal"] #about > div,
+[data-theme="minimal"] #why > div,
+[data-theme="minimal"] #how > div,
+[data-theme="minimal"] #journey > div,
+[data-theme="minimal"] #community > div,
+[data-theme="minimal"] #cta-final > div {
+  background: rgba(255,255,255,.74);
+  border: 1px solid rgba(232,224,211,.9);
+  box-shadow: 0 26px 70px rgba(54,31,93,.08);
+  backdrop-filter: blur(14px);
+}
+[data-theme="spider"] #about > div,
+[data-theme="spider"] #why > div,
+[data-theme="spider"] #how > div,
+[data-theme="spider"] #journey > div,
+[data-theme="spider"] #community > div,
+[data-theme="spider"] #cta-final > div {
+  background: rgba(19,16,32,.92) !important;
+  border: 1px solid rgba(255,59,59,.22);
+  box-shadow: 0 24px 70px rgba(0,0,0,.35), 0 0 0 1px rgba(255,59,59,.05) inset;
+}
+[data-theme="f1"] #about > div,
+[data-theme="f1"] #why > div,
+[data-theme="f1"] #how > div,
+[data-theme="f1"] #journey > div,
+[data-theme="f1"] #community > div,
+[data-theme="f1"] #cta-final > div {
+  background: rgba(17,17,18,.96) !important;
+  border: 1px solid rgba(225,6,0,.25);
+  border-radius: .65rem;
+  box-shadow: 0 24px 70px rgba(0,0,0,.42);
+}
+[data-theme="cyber"] #about > div,
+[data-theme="cyber"] #why > div,
+[data-theme="cyber"] #how > div,
+[data-theme="cyber"] #journey > div,
+[data-theme="cyber"] #community > div,
+[data-theme="cyber"] #cta-final > div {
+  background: rgba(23,11,43,.84) !important;
+  border: 1px solid rgba(178,75,255,.34);
+  box-shadow: 0 24px 70px rgba(0,0,0,.4), 0 0 28px rgba(178,75,255,.09);
+  backdrop-filter: blur(16px);
+}
+
+/* Keep the campus band as a deliberate part of the same tour. */
+[data-theme="spider"] .campus-band,
+[data-theme="f1"] .campus-band,
+[data-theme="cyber"] .campus-band { background: transparent !important; }
+
+/* Gradient emphasis for section headings, using each world's accent. */
+/* Section-title emphasis is handled entirely by the .gradient-text /
+   .gradient-text-warm span inside each heading (see rules above) — a
+   second background-clip:text layer on the parent .section-title itself
+   caused a conflict where the emphasized span painted as a solid color
+   block with no visible letters ("patches"). Do not reintroduce a
+   parent-level clip here; keep emphasis scoped to the inner span only. */
+
+
+/* World-specific card language. */
+[data-theme="spider"] .feature-card,
+[data-theme="spider"] .vp-stat,
+[data-theme="spider"] .campus-card { border-radius: 1.35rem; border-width: 1px; box-shadow: 7px 7px 0 rgba(255,59,59,.08); }
+[data-theme="f1"] .feature-card,
+[data-theme="f1"] .vp-stat,
+[data-theme="f1"] .campus-card { border-radius: .55rem !important; clip-path: polygon(0 0, 97% 0, 100% 12%, 100% 100%, 3% 100%, 0 88%); }
+[data-theme="cyber"] .feature-card,
+[data-theme="cyber"] .vp-stat,
+[data-theme="cyber"] .campus-card { backdrop-filter: blur(14px); box-shadow: 0 0 22px rgba(178,75,255,.10); }
+
+/* Make Discover readable too, even though it was not in the recording. */
+[data-theme="spider"] .bg-vm-gradient,
+[data-theme="f1"] .bg-vm-gradient,
+[data-theme="cyber"] .bg-vm-gradient { position: relative; }
+
+/* Reduced-motion: all content remains visible and functional. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  .scroll-reveal, .reveal { opacity: 1 !important; transform: none !important; }
+  .vp-world-fx { display: none; }
+}
+
+@media (max-width: 640px) {
+  #about > div { padding: 1.35rem; }
+  #about > div, #why > div, #how > div, #journey > div, #community > div, #cta-final > div { border-radius: 1.25rem; }
+}
+
+/* World selector previews: the choice itself should communicate the identity. */
+.vp-world-card { min-height: 210px; border-color: rgba(120,120,140,.22); color: #21153F; }
+.vp-world-card-minimal { background: linear-gradient(145deg,#fffdf8,#f4ecff); }
+.vp-world-card-spider { background: radial-gradient(circle at 85% 15%,rgba(255,59,59,.2),transparent 28%), #0B0E1A; color:#F4F2FF; border-color:rgba(255,59,59,.22); }
+.vp-world-card-f1 { background: repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 8px),#0A0A0C; color:#F4F2FF; border-color:rgba(225,6,0,.28); border-radius:.65rem; }
+.vp-world-card-cyber { background: linear-gradient(rgba(178,75,255,.08) 1px,transparent 1px) 0 0/24px 24px, linear-gradient(90deg,rgba(84,217,255,.05) 1px,transparent 1px) 0 0/24px 24px,#0A0714; color:#E8E2FF; border-color:rgba(178,75,255,.34); }
+.vp-world-card-spider.is-active { box-shadow:0 0 0 1px rgba(255,59,59,.25),0 18px 42px rgba(255,59,59,.15); }
+.vp-world-card-f1.is-active { box-shadow:0 18px 42px rgba(225,6,0,.18); }
+.vp-world-card-cyber.is-active { box-shadow:0 0 30px rgba(178,75,255,.22); }
+.vp-intro-spider { background: radial-gradient(circle at 50% 40%,rgba(255,59,59,.16),transparent 25%),#0B0E1A !important; }
+.vp-intro-f1 { background: repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 2px,transparent 2px 10px),#0A0A0C !important; }
+.vp-intro-cyber { background: linear-gradient(rgba(178,75,255,.08) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(84,217,255,.06) 1px,transparent 1px) 0 0/28px 28px,#0A0714 !important; }
+
+/* ============================================================
+   World identity — deepened per client-supplied reference moodboards.
+   Pure decorative overlays: pointer-events:none / negative z-index,
+   scoped strictly under [data-theme="..."], no DOM/markup changes,
+   no effect on layout, spacing or interactive elements.
+   Ref: F1 -> motorsport dashboard (red streak, carbon texture)
+        Cyber -> AI/edge network (circuit grid, radiating glow)
+        Spider -> comic/web energy (web-line burst, panel edges)
+        Minimal -> soft glass/pastel orbs (extra ambient depth)
+   ============================================================ */
+
+/* --- F1: diagonal light streak across hero + carbon-weave texture on cards --- */
+[data-theme="f1"] .vp-hero-grid { position: relative; }
+[data-theme="f1"] .vp-hero-grid::before {
+  content: "";
+  position: absolute; inset: -15% -5% auto -5%; height: 130%;
+  background: linear-gradient(115deg, transparent 38%, rgba(225,6,0,.14) 47%, rgba(255,255,255,.05) 50%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+[data-theme="f1"] .vp-visual-card { position: relative; z-index: 1; }
+[data-theme="f1"] .vp-visual-card::before {
+  content: "";
+  position: absolute; inset: -3px; border-radius: inherit; z-index: -1;
+  background: linear-gradient(120deg, rgba(225,6,0,.55), transparent 40%, transparent 60%, rgba(225,6,0,.3));
+  filter: blur(7px); pointer-events: none;
+}
+[data-theme="f1"] .feature-card, [data-theme="f1"] .vp-trust, [data-theme="f1"] .vp-stat {
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.025) 0 1px, transparent 1px 7px);
+}
+
+/* --- Cyber: radiating circuit grid behind the hero card + centre light rail --- */
+[data-theme="cyber"] .vp-visual-card { position: relative; z-index: 1; }
+[data-theme="cyber"] .vp-visual-card::before {
+  content: "";
+  position: absolute; inset: -56px; z-index: -1; opacity: .6; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(178,75,255,.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(84,217,255,.16) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+  mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+}
+[data-theme="cyber"] .vp-hero-grid { position: relative; }
+[data-theme="cyber"] .vp-hero-grid::before {
+  content: "";
+  position: absolute; left: 50%; top: 6%; width: 1px; height: 88%;
+  background: linear-gradient(rgba(84,217,255,0), rgba(178,75,255,.4), rgba(84,217,255,0));
+  transform: translateX(-50%); pointer-events: none; z-index: 0; opacity: .5;
+}
+
+/* --- Spider: web-burst pattern behind the hero card + comic-panel offset edges --- */
+[data-theme="spider"] .vp-visual-card { position: relative; z-index: 1; }
+[data-theme="spider"] .vp-visual-card::before {
+  content: "";
+  position: absolute; inset: -55px; z-index: -1; opacity: .35; pointer-events: none;
+  background-image: repeating-conic-gradient(from 0deg, rgba(255,59,59,.22) 0deg 1.4deg, transparent 1.4deg 16deg);
+  border-radius: 999px;
+}
+[data-theme="spider"] .feature-card, [data-theme="spider"] .vp-trust {
+  box-shadow: 3px 3px 0 rgba(255,59,59,.22), inset 0 0 0 1px rgba(255,59,59,.1) !important;
+}
+
+/* --- Minimal: extra soft floating glass orb for added depth --- */
+[data-theme="minimal"] .vp-hero-grid { position: relative; }
+[data-theme="minimal"] .vp-hero-grid::before {
+  content: "";
+  position: absolute; right: 4%; top: -8%; width: 200px; height: 200px; border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(112,40,239,.12));
+  filter: blur(6px); pointer-events: none; z-index: 0;
+}
+
+/* --- Cursor / click-pulse shape refinements per world (extends existing effects) --- */
+[data-theme="spider"] .vp-world-pulse {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  border-radius: 0;
+}
+[data-theme="f1"] .vp-world-cursor { position: fixed; }
+[data-theme="f1"] .vp-world-cursor::after {
+  content: "";
+  position: absolute; inset: -7px; border: 1px solid rgba(225,6,0,.3); border-radius: inherit;
+}
+
+/* --- Login page: floating glow panel treatment (world-aware, decorative only) --- */
+.vp-login-shell { position: relative; overflow: hidden; }
+.vp-login-glow {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 640px; height: 640px; border-radius: 999px; filter: blur(90px);
+  left: 50%; top: 50%; transform: translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(112,40,239,.28), transparent 70%);
+  opacity: .8;
+}
+[data-theme="spider"] .vp-login-glow { background: radial-gradient(circle, rgba(255,59,59,.32), transparent 70%); }
+[data-theme="f1"]     .vp-login-glow { background: radial-gradient(circle, rgba(225,6,0,.34), transparent 70%); }
+[data-theme="cyber"]  .vp-login-glow { background: radial-gradient(circle, rgba(178,75,255,.34), transparent 70%); }
+.vp-login-card {
+  position: relative; z-index: 1;
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: 0 30px 80px rgba(45,25,82,.16);
+  backdrop-filter: blur(18px);
+}
+[data-theme="spider"] .vp-login-card,
+[data-theme="f1"] .vp-login-card,
+[data-theme="cyber"] .vp-login-card {
+  background: rgba(15,13,24,.62);
+  border: 1px solid rgba(255,255,255,.08);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .vp-login-card { animation: reveal .5s ease both; }
+  .vp-login-stagger-1 { animation: reveal .5s ease .06s both; }
+  .vp-login-stagger-2 { animation: reveal .5s ease .12s both; }
+  .vp-login-stagger-3 { animation: reveal .5s ease .18s both; }
+}
+
+/* ============================================================
+   Round 2 fixes — confirmed bugs from user testing (screen recording):
+   1) bg-paper/NN and bg-white/NN opacity utilities were never covered
+      by the dark-theme override (only bare .bg-paper/.bg-white were) —
+      this produced the washed-out grey rectangle in Messages + ProfileEdit.
+   2) Messages conversation active/hover state used bg-forestLight (a
+      near-white pastel) while its inner text flips to a light color in
+      dark worlds — light-on-light. Same class of bug as the original
+      text-ink/background mismatch, just via a Tailwind opacity utility
+      and a *Light pastel instead of bg-white/bg-paper directly.
+   ============================================================ */
+
+/* Semantic "soft surface" replacing raw bg-paper/NN opacity utilities. */
+.vp-surface-soft { background: rgba(255, 249, 237, .6); }
+[data-theme="spider"] .vp-page-shell .vp-surface-soft { background: rgba(23,18,38,.75) !important; color: #F4F2FF; }
+[data-theme="f1"]     .vp-page-shell .vp-surface-soft { background: rgba(17,17,18,.8) !important; color: #F4F4F4; }
+[data-theme="cyber"]  .vp-page-shell .vp-surface-soft { background: rgba(23,11,43,.75) !important; color: #E8E2FF; }
+
+/* Conversation row — active/hover state that stays readable in every world. */
+.vp-convo-row:hover, .vp-convo-row-active { background: #F1FFD8; }
+[data-theme="spider"] .vp-page-shell .vp-convo-row:hover,
+[data-theme="spider"] .vp-page-shell .vp-convo-row-active { background: rgba(255,59,59,.14) !important; }
+[data-theme="f1"] .vp-page-shell .vp-convo-row:hover,
+[data-theme="f1"] .vp-page-shell .vp-convo-row-active { background: rgba(225,6,0,.14) !important; }
+[data-theme="cyber"] .vp-page-shell .vp-convo-row:hover,
+[data-theme="cyber"] .vp-page-shell .vp-convo-row-active { background: rgba(178,75,255,.16) !important; }
+
+/* Small pastel icon-circles (call buttons, phone icon, avatar fallback) —
+   keep the same accent hue but drop the bright pastel backing in dark
+   worlds so they sit naturally on a dark page instead of glaring. */
+[data-theme="spider"] .vp-page-shell .bg-forestLight,
+[data-theme="spider"] .vp-page-shell .bg-orangeLight,
+[data-theme="spider"] .vp-page-shell .bg-violetLight { background: rgba(255,255,255,.08) !important; }
+[data-theme="f1"] .vp-page-shell .bg-forestLight,
+[data-theme="f1"] .vp-page-shell .bg-orangeLight,
+[data-theme="f1"] .vp-page-shell .bg-violetLight { background: rgba(255,255,255,.07) !important; }
+[data-theme="cyber"] .vp-page-shell .bg-forestLight,
+[data-theme="cyber"] .vp-page-shell .bg-orangeLight,
+[data-theme="cyber"] .vp-page-shell .bg-violetLight { background: rgba(255,255,255,.08) !important; }
+[data-theme="spider"] .vp-page-shell .text-forest,
+[data-theme="spider"] .vp-page-shell .text-orange,
+[data-theme="f1"] .vp-page-shell .text-forest,
+[data-theme="f1"] .vp-page-shell .text-orange,
+[data-theme="cyber"] .vp-page-shell .text-forest,
+[data-theme="cyber"] .vp-page-shell .text-orange { filter: brightness(1.35); }
+
+/* Inner-page ambient backdrop per world — so Messages/Connections/Profile/
+   Calls/Notifications/Discover feel distinct too, not just a flat solid. */
+[data-theme="spider"] .vp-page-shell {
+  background:
+    radial-gradient(circle at 85% 0%, rgba(255,59,59,.10), transparent 32%),
+    radial-gradient(circle at 0% 100%, rgba(60,90,255,.08), transparent 32%),
+    #0B0E1A;
+}
+[data-theme="f1"] .vp-page-shell {
+  background:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.02) 0 2px, transparent 2px 30px),
+    linear-gradient(160deg, #0A0A0C 0%, #17070A 100%);
+}
+[data-theme="cyber"] .vp-page-shell {
+  background:
+    linear-gradient(rgba(178,75,255,.05) 1px, transparent 1px) 0 0/28px 28px,
+    linear-gradient(90deg, rgba(84,217,255,.04) 1px, transparent 1px) 0 0/28px 28px,
+    #0A0714;
+}
+
+.vp-profile-avatar-ring {
+  border: 4px solid #fff;
+  box-shadow: 0 12px 30px rgba(33,21,63,.25);
+}
+[data-theme="spider"] .vp-profile-avatar-ring,
+[data-theme="f1"] .vp-profile-avatar-ring,
+[data-theme="cyber"] .vp-profile-avatar-ring { border-color: #0B0E1A; }
+
+/* Extend the existing cross-fade transition list to the new surfaces. */
+@media (prefers-reduced-motion: no-preference) {
+  .vp-surface-soft, .vp-convo-row, .vp-login-card {
+    transition: background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+}
+
+/* ============================================================
+   Round 3 fix — hero decorative orbs were hardcoded purple/lime
+   (arbitrary Tailwind hex classes), so they never re-themed and
+   looked mismatched against Spider/F1/Cyber's own palette.
+   ============================================================ */
+[data-theme="spider"] .vp-hero-orb-1 { background: #FF3B3B !important; }
+[data-theme="spider"] .vp-hero-orb-2 { background: #3C5AFF !important; }
+[data-theme="f1"] .vp-hero-orb-1 { background: #E10600 !important; }
+[data-theme="f1"] .vp-hero-orb-2 { background: #FFFFFF !important; opacity: .12 !important; }
+[data-theme="cyber"] .vp-hero-orb-1 { background: #B24BFF !important; }
+[data-theme="cyber"] .vp-hero-orb-2 { background: #54D9FF !important; }
+
+/* ============================================================
+   VITPEERS FINAL WORLD + PRODUCT POLISH
+   ============================================================ */
+.vp-home-shell { overflow: clip; background: #09090b; }
+.vp-home-section { position: relative; padding: 1px 0; background: #0b0b0d; }
+.vp-home-section::before { content:""; position:absolute; width:34rem; height:34rem; border-radius:50%; filter:blur(90px); opacity:.16; pointer-events:none; background:#7028EF; top:15%; left:-18rem; }
+.vp-home-section:nth-of-type(even)::before { left:auto; right:-18rem; top:25%; background:#FF5A60; }
+.vp-floating-panel { position:relative; z-index:1; margin-top:3rem; margin-bottom:3rem; border:1px solid rgba(255,255,255,.08); border-radius:2rem; background:rgba(17,17,20,.84); box-shadow:0 30px 90px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.04); backdrop-filter:blur(18px); }
+.vp-home-trust-wrap { filter:drop-shadow(0 20px 50px rgba(0,0,0,.24)); }
+.vp-home-trust-wrap .vp-trust { background:rgba(18,18,22,.92); border-color:rgba(255,255,255,.1); color:#f4f2ff; }
+[data-theme="spider"] .vp-home-trust-wrap .text-navy, [data-theme="f1"] .vp-home-trust-wrap .text-navy, [data-theme="cyber"] .vp-home-trust-wrap .text-navy { color:#f4f2ff !important; }
+[data-theme="spider"] .vp-home-trust-wrap .text-ink\/50, [data-theme="f1"] .vp-home-trust-wrap .text-ink\/50, [data-theme="cyber"] .vp-home-trust-wrap .text-ink\/50 { color:rgba(244,242,255,.55) !important; }
+[data-theme="spider"] .vp-home-shell .section-title, [data-theme="spider"] .vp-home-shell .vp-floating-panel h2, [data-theme="spider"] .vp-home-shell .vp-floating-panel h3,
+[data-theme="f1"] .vp-home-shell .section-title, [data-theme="f1"] .vp-home-shell .vp-floating-panel h2, [data-theme="f1"] .vp-home-shell .vp-floating-panel h3,
+[data-theme="cyber"] .vp-home-shell .section-title, [data-theme="cyber"] .vp-home-shell .vp-floating-panel h2, [data-theme="cyber"] .vp-home-shell .vp-floating-panel h3 { color:#f7f5ff !important; }
+[data-theme="spider"] .vp-home-shell .body-copy, [data-theme="spider"] .vp-home-shell .vp-floating-panel .text-ink\/60,
+[data-theme="f1"] .vp-home-shell .body-copy, [data-theme="f1"] .vp-home-shell .vp-floating-panel .text-ink\/60,
+[data-theme="cyber"] .vp-home-shell .body-copy, [data-theme="cyber"] .vp-home-shell .vp-floating-panel .text-ink\/60 { color:rgba(244,242,255,.65) !important; }
+[data-theme="spider"] .vp-home-shell .vp-floating-panel .bg-white,
+[data-theme="f1"] .vp-home-shell .vp-floating-panel .bg-white,
+[data-theme="cyber"] .vp-home-shell .vp-floating-panel .bg-white { background:#151519 !important; border-color:rgba(255,255,255,.08) !important; }
+[data-theme="spider"] .vp-home-shell .vp-floating-panel .text-orange,
+[data-theme="f1"] .vp-home-shell .vp-floating-panel .text-orange,
+[data-theme="cyber"] .vp-home-shell .vp-floating-panel .text-orange { color:#ff8a78 !important; }
+.vp-community-panel { box-shadow:0 35px 100px rgba(0,0,0,.35); }
+
+/* Dark-world landing backgrounds */
+[data-theme="spider"] .vp-home-shell { background:#070912; }
+[data-theme="spider"] .vp-home-section { background:radial-gradient(circle at 15% 20%,rgba(255,59,59,.09),transparent 28%),radial-gradient(circle at 85% 80%,rgba(60,90,255,.08),transparent 28%),#070912; }
+[data-theme="spider"] .vp-floating-panel { background:linear-gradient(145deg,rgba(17,18,32,.94),rgba(20,13,24,.94)); border-color:rgba(255,59,59,.18); box-shadow:0 30px 80px rgba(0,0,0,.42),3px 3px 0 rgba(255,59,59,.08); }
+[data-theme="f1"] .vp-home-shell { background:#050506; }
+[data-theme="f1"] .vp-home-section { background:repeating-linear-gradient(115deg,rgba(255,255,255,.018) 0 2px,transparent 2px 28px),#070708; }
+[data-theme="f1"] .vp-floating-panel { background:linear-gradient(145deg,#111113,#0a0a0b); border-radius:.75rem; border-color:rgba(225,6,0,.2); box-shadow:0 28px 70px rgba(0,0,0,.55); }
+[data-theme="cyber"] .vp-home-shell { background:#06040c; }
+[data-theme="cyber"] .vp-home-section { background:linear-gradient(rgba(178,75,255,.035) 1px,transparent 1px) 0 0/34px 34px,linear-gradient(90deg,rgba(84,217,255,.03) 1px,transparent 1px) 0 0/34px 34px,#06040c; }
+[data-theme="cyber"] .vp-floating-panel { background:rgba(15,8,29,.86); border-color:rgba(178,75,255,.24); box-shadow:0 0 55px rgba(178,75,255,.08),inset 0 0 35px rgba(84,217,255,.025); }
+
+/* Correct the old accidental Spider dark-world text regression. */
+[data-theme="spider"] h1,[data-theme="spider"] h2,[data-theme="spider"] h3,[data-theme="spider"] p,[data-theme="spider"] label { color:inherit !important; }
+[data-theme="spider"] .section-title,[data-theme="spider"] .vp-hero-title { color:#f4f2ff !important; }
+[data-theme="f1"] .section-title,[data-theme="f1"] .vp-hero-title,[data-theme="cyber"] .section-title,[data-theme="cyber"] .vp-hero-title { color:#f4f2ff !important; }
+
+/* World selection cards */
+.vp-world-card { min-height:260px; border-radius:1.5rem; }
+.vp-world-card-art { position:absolute; inset:0; pointer-events:none; opacity:.65; }
+.vp-world-card-art-core { position:absolute; right:30px; top:30px; width:72px; height:72px; border-radius:24px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.08); border:1px solid currentColor; box-shadow:0 15px 35px rgba(0,0,0,.18); }
+.vp-world-card-art-line { position:absolute; height:1px; width:180px; right:-25px; background:currentColor; opacity:.16; transform:rotate(-25deg); }
+.vp-world-card-art-line.one{top:75px}.vp-world-card-art-line.two{top:105px;transform:rotate(18deg)}.vp-world-card-art-line.three{top:135px;transform:rotate(-8deg)}
+.vp-world-emoji { width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.09);font-size:22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.1); }
+.vp-world-check { width:30px;height:30px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.22); }
+.vp-world-card-minimal { background:linear-gradient(145deg,#fffdf8,#f1eaff); }
+.vp-world-card-minimal .vp-world-card-art-core{color:#7028EF}.vp-world-card-spider .vp-world-card-art-core{color:#FF3B3B}.vp-world-card-f1 .vp-world-card-art-core{color:#E10600}.vp-world-card-cyber .vp-world-card-art-core{color:#54D9FF}
+.vp-world-card:hover .vp-world-card-art-core { transform:rotate(-6deg) scale(1.08); transition:transform .3s ease; }
+.vp-world-card.is-active { transform:translateY(-4px); }
+
+/* Per-world pointer interaction */
+.vp-world-fx { position:fixed; inset:0; pointer-events:none; z-index:60; overflow:hidden; }
+.vp-world-cursor { position:fixed; left:var(--vp-mx,50%); top:var(--vp-my,50%); width:18px;height:18px;border:1px solid rgba(112,40,239,.5);border-radius:50%;transform:translate(-50%,-50%);opacity:.5;transition:width .18s,height .18s,opacity .18s; }
+.vp-world-pulse { position:fixed;width:30px;height:30px;transform:translate(-50%,-50%);border:1px solid currentColor;border-radius:50%;animation:vpPulse .55s ease-out forwards; }
+@keyframes vpPulse{0%{opacity:.9;transform:translate(-50%,-50%) scale(.3)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.8)}}
+[data-theme="spider"] .vp-world-cursor{border-color:#FF3B3B;box-shadow:0 0 0 4px rgba(255,59,59,.07)}
+[data-theme="f1"] .vp-world-cursor{border-color:#E10600;border-radius:4px;box-shadow:0 0 12px rgba(225,6,0,.35)}
+[data-theme="cyber"] .vp-world-cursor{border-color:#54D9FF;box-shadow:0 0 14px rgba(178,75,255,.4)}
+.vp-web-trail{position:fixed;left:var(--vp-mx,50%);top:var(--vp-my,50%);width:260px;height:180px;transform:translate(-50%,-50%);background:repeating-radial-gradient(ellipse at center,transparent 0 22px,rgba(255,59,59,.09) 23px 24px);-webkit-mask-image:linear-gradient(90deg,transparent,black,transparent);mask-image:linear-gradient(90deg,transparent,black,transparent);opacity:.55;}
+.vp-speed-trail{position:fixed;right:0;top:var(--vp-my,50%);width:38vw;height:100px;transform:translateY(-50%);background:repeating-linear-gradient(175deg,transparent 0 14px,rgba(225,6,0,.18) 15px 17px,transparent 18px 30px);-webkit-mask-image:linear-gradient(90deg,transparent,black);mask-image:linear-gradient(90deg,transparent,black);opacity:.5;}
+.vp-scan-trail{position:fixed;left:0;right:0;top:var(--vp-my,50%);height:1px;background:linear-gradient(90deg,transparent,#54D9FF,transparent);box-shadow:0 0 18px #54D9FF;opacity:.35;}
+
+/* Inner-page shared heading */
+.vp-page-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.5rem;}
+.vp-page-code{font:600 9px/1 "JetBrains Mono",monospace;letter-spacing:.16em;opacity:.45;text-transform:uppercase;}
+[data-theme="f1"] .vp-page-heading h1,[data-theme="f1"] .vp-page-heading + h1{font-family:"Orbitron",sans-serif;text-transform:uppercase;}
+
+/* Discover / driver profile cards */
+.vp-discover-hero{background:radial-gradient(circle at 85% 10%,rgba(255,90,96,.22),transparent 28%),linear-gradient(135deg,#111018,#24143d);border-bottom:1px solid rgba(255,255,255,.08);}
+.vp-page-status{font:700 9px/1 "JetBrains Mono",monospace;letter-spacing:.12em;padding:.7rem .9rem;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:rgba(255,255,255,.75);white-space:nowrap;background:rgba(255,255,255,.05)}
+.vp-page-status span{display:inline-block;width:7px;height:7px;border-radius:50%;background:#B7FF00;box-shadow:0 0 0 4px rgba(183,255,0,.12);margin-right:7px}
+.vp-filter-panel{display:flex;flex-wrap:wrap;gap:.65rem;padding:.75rem;border-radius:1.35rem;background:rgba(255,255,255,.94);border:1px solid rgba(33,21,63,.1);box-shadow:0 20px 50px rgba(20,15,30,.18);backdrop-filter:blur(14px)}
+.vp-filter-panel input,.vp-filter-control{border:1px solid #e6e0d8;background:#fff;color:#201a32;min-height:44px}
+.vp-filter-control{padding:.65rem .9rem;border-radius:.8rem;min-width:150px}
+.vp-result-label{font:600 12px/1 "Space Grotesk",sans-serif}.vp-result-hint{font:500 9px/1 "JetBrains Mono",monospace;opacity:.42;letter-spacing:.12em}
+.vp-driver-card{position:relative;padding:1.15rem;border-radius:1.4rem;background:rgba(255,255,255,.94);border:1px solid rgba(33,21,63,.1);box-shadow:0 14px 30px rgba(25,18,35,.08);color:#201a32;overflow:hidden;animation:vpCardIn .55s cubic-bezier(.2,.75,.25,1) both;animation-delay:var(--card-delay)}
+@keyframes vpCardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.vp-driver-card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(#7028EF,#FF5A60);opacity:.75}.vp-driver-card:hover{transform:translateY(-7px);box-shadow:0 24px 48px rgba(25,18,35,.15);border-color:rgba(112,40,239,.28)}
+.vp-driver-topline{display:flex;justify-content:space-between;font:700 8px/1 "JetBrains Mono",monospace;letter-spacing:.14em;opacity:.4}.vp-driver-dot{width:7px;height:7px;border-radius:50%;background:#6acb6a;box-shadow:0 0 0 4px rgba(106,203,106,.1)}
+.vp-driver-avatar{padding:4px;border-radius:18px;background:linear-gradient(135deg,#7028EF,#FF5A60)}.vp-driver-avatar > *{border-radius:14px}.vp-driver-stat{display:flex;align-items:center;gap:.5rem;padding:.6rem .7rem;border-radius:.8rem;background:#f7f3fb;border:1px solid rgba(112,40,239,.08);font:500 10px/1.2 "DM Sans",sans-serif}.vp-driver-stat span{opacity:.55}.vp-driver-stat b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.vp-driver-open{display:inline-flex;align-items:center;gap:.25rem;font:700 10px/1 "Space Grotesk",sans-serif}.vp-driver-tag{font:500 9px/1 "JetBrains Mono",monospace;padding:.35rem .5rem;border-radius:999px;background:#f5f0fb;opacity:.72}.vp-empty-state{display:flex;align-items:center;justify-content:center;gap:.65rem;min-height:140px;border:1px dashed rgba(112,40,239,.22);border-radius:1.25rem;background:rgba(255,255,255,.5);padding:1rem;text-align:center}.vp-driver-skeleton{height:280px;border-radius:1.4rem;background:linear-gradient(90deg,rgba(255,255,255,.7),rgba(245,240,250,.95),rgba(255,255,255,.7));background-size:200% 100%;animation:vpSkeleton 1.2s infinite}@keyframes vpSkeleton{to{background-position:-200% 0}}
+[data-theme="spider"] .vp-driver-card,[data-theme="f1"] .vp-driver-card,[data-theme="cyber"] .vp-driver-card{background:#131020;color:#f4f2ff;border-color:rgba(255,255,255,.08)}
+[data-theme="spider"] .vp-driver-card{border-radius:1rem;box-shadow:3px 3px 0 rgba(255,59,59,.13)}[data-theme="f1"] .vp-driver-card{border-radius:.65rem;background:#111112}[data-theme="cyber"] .vp-driver-card{background:#170b2b;box-shadow:0 0 24px rgba(178,75,255,.08)}
+[data-theme="spider"] .vp-driver-stat,[data-theme="f1"] .vp-driver-stat,[data-theme="cyber"] .vp-driver-stat{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
+[data-theme="spider"] .vp-driver-tag,[data-theme="f1"] .vp-driver-tag,[data-theme="cyber"] .vp-driver-tag{background:rgba(255,255,255,.06)}
+[data-theme="spider"] .vp-filter-panel,[data-theme="f1"] .vp-filter-panel,[data-theme="cyber"] .vp-filter-panel{background:rgba(15,13,24,.9);border-color:rgba(255,255,255,.08);color:#f4f2ff}.vp-filter-panel input,.vp-filter-panel select{transition:border-color .2s,box-shadow .2s}.vp-filter-panel input:focus,.vp-filter-panel select:focus{outline:none;box-shadow:0 0 0 3px rgba(112,40,239,.12);border-color:#7028EF}
+[data-theme="spider"] .vp-filter-panel input,[data-theme="spider"] .vp-filter-panel select,[data-theme="f1"] .vp-filter-panel input,[data-theme="f1"] .vp-filter-panel select,[data-theme="cyber"] .vp-filter-panel input,[data-theme="cyber"] .vp-filter-panel select{background:#15121f;color:#f4f2ff;border-color:rgba(255,255,255,.14)}
+
+/* Calls / race briefing */
+.vp-race-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;padding:1.4rem 0 1.2rem;border-bottom:1px solid rgba(112,40,239,.16)}.vp-telemetry{display:flex;align-items:center;gap:6px;font:700 9px/1 "JetBrains Mono",monospace;letter-spacing:.12em}.vp-telemetry span{width:7px;height:18px;background:#E10600;box-shadow:0 0 10px rgba(225,6,0,.4)}.vp-telemetry span:nth-child(2){height:26px}.vp-telemetry span:nth-child(3){height:12px}.vp-telemetry b{margin-left:5px;color:#E10600}
+.vp-race-card{display:grid;grid-template-columns:68px 1fr;border:1px solid rgba(33,21,63,.1);border-radius:1.3rem;background:#fff;overflow:hidden;box-shadow:0 16px 38px rgba(25,18,35,.08)}.vp-race-number{display:flex;align-items:flex-start;justify-content:center;padding-top:1.5rem;font:700 12px/1 "Orbitron",sans-serif;color:#E10600;background:repeating-linear-gradient(135deg,#f4f4f5 0 2px,#fff 2px 8px);border-right:1px solid rgba(33,21,63,.08)}.vp-race-main{padding:1.4rem}.vp-race-avatar{padding:3px;border-radius:15px;background:#111}.vp-race-status{font:700 9px/1 "JetBrains Mono",monospace;letter-spacing:.1em;padding:.55rem .7rem;border-radius:.3rem;background:#f5f5f6}.vp-race-detail{display:flex;gap:.7rem;align-items:center;padding:.8rem;border:1px solid rgba(33,21,63,.08);border-radius:.8rem;background:#fafafa}.vp-race-detail svg{color:#E10600}.vp-race-detail span,.vp-race-note>span{display:block;font:700 8px/1 "JetBrains Mono",monospace;letter-spacing:.13em;opacity:.42}.vp-race-detail b{display:block;margin-top:.3rem;font:600 11px/1.3 "DM Sans",sans-serif}.vp-race-note{margin-top:.8rem;padding:.8rem;border-left:3px solid #E10600;background:#fafafa}.vp-race-note p{font-size:.8rem;opacity:.7;margin-top:.35rem}.vp-race-primary,.vp-race-secondary{display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:.5rem;font-size:.75rem;font-weight:700}.vp-race-primary{background:#E10600;color:#fff;box-shadow:0 8px 18px rgba(225,6,0,.2)}.vp-race-secondary{border:1px solid rgba(33,21,63,.12)}.vp-race-muted{font-size:.75rem;opacity:.45}
+[data-theme="spider"] .vp-race-card,[data-theme="f1"] .vp-race-card,[data-theme="cyber"] .vp-race-card{background:#111112;color:#f4f2ff;border-color:rgba(255,255,255,.08)}[data-theme="spider"] .vp-race-card{border-color:rgba(255,59,59,.2)}[data-theme="cyber"] .vp-race-card{background:#170b2b;border-color:rgba(178,75,255,.24)}[data-theme="spider"] .vp-race-number,[data-theme="f1"] .vp-race-number,[data-theme="cyber"] .vp-race-number{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08)}[data-theme="spider"] .vp-race-detail,[data-theme="f1"] .vp-race-detail,[data-theme="cyber"] .vp-race-detail,[data-theme="spider"] .vp-race-note,[data-theme="f1"] .vp-race-note,[data-theme="cyber"] .vp-race-note{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
+
+/* Inner-page surfaces + inputs */
+.vp-connections-shell,.vp-messages-shell,.vp-notifications-shell,.vp-profile-edit-shell,.vp-calls-shell{position:relative;isolation:isolate}.vp-connections-shell::before,.vp-messages-shell::before,.vp-notifications-shell::before,.vp-profile-edit-shell::before,.vp-calls-shell::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 85% 0%,rgba(112,40,239,.09),transparent 28%)}
+[data-theme="spider"] .vp-connections-shell::before,[data-theme="spider"] .vp-messages-shell::before,[data-theme="spider"] .vp-notifications-shell::before,[data-theme="spider"] .vp-profile-edit-shell::before,[data-theme="spider"] .vp-calls-shell::before{background:radial-gradient(circle at 85% 0%,rgba(255,59,59,.12),transparent 30%)}
+[data-theme="f1"] .vp-connections-shell::before,[data-theme="f1"] .vp-messages-shell::before,[data-theme="f1"] .vp-notifications-shell::before,[data-theme="f1"] .vp-profile-edit-shell::before,[data-theme="f1"] .vp-calls-shell::before{background:repeating-linear-gradient(120deg,rgba(255,255,255,.018) 0 2px,transparent 2px 28px)}
+[data-theme="cyber"] .vp-connections-shell::before,[data-theme="cyber"] .vp-messages-shell::before,[data-theme="cyber"] .vp-notifications-shell::before,[data-theme="cyber"] .vp-profile-edit-shell::before,[data-theme="cyber"] .vp-calls-shell::before{background:linear-gradient(rgba(178,75,255,.05) 1px,transparent 1px) 0 0/30px 30px,linear-gradient(90deg,rgba(84,217,255,.04) 1px,transparent 1px) 0 0/30px 30px}
+[data-theme="spider"] .vp-page-shell input,[data-theme="spider"] .vp-page-shell textarea,[data-theme="spider"] .vp-page-shell select,[data-theme="f1"] .vp-page-shell input,[data-theme="f1"] .vp-page-shell textarea,[data-theme="f1"] .vp-page-shell select,[data-theme="cyber"] .vp-page-shell input,[data-theme="cyber"] .vp-page-shell textarea,[data-theme="cyber"] .vp-page-shell select{background:rgba(255,255,255,.075) !important;border-color:rgba(255,255,255,.18) !important;color:#f4f2ff !important;min-height:42px}.vp-page-shell input:focus,.vp-page-shell textarea:focus,.vp-page-shell select:focus{box-shadow:0 0 0 3px rgba(112,40,239,.1)}
+[data-theme="spider"] .vp-page-shell .bg-white:not(.vp-preview-card),[data-theme="f1"] .vp-page-shell .bg-white:not(.vp-preview-card),[data-theme="cyber"] .vp-page-shell .bg-white:not(.vp-preview-card){box-shadow:0 16px 40px rgba(0,0,0,.22)}
+
+@media (max-width: 700px){.vp-world-fx{display:none}.vp-race-header{align-items:flex-start;flex-direction:column}.vp-race-card{grid-template-columns:44px 1fr}.vp-race-main{padding:1rem}.vp-driver-card{padding:1rem}.vp-floating-panel{margin-top:1.5rem;margin-bottom:1.5rem;border-radius:1.3rem}.vp-home-section{padding:0}.vp-filter-panel{border-radius:1rem}.vp-filter-control{flex:1;min-width:135px}}
+@media (prefers-reduced-motion: reduce){.vp-driver-card,.vp-driver-skeleton{animation:none}.vp-world-cursor,.vp-web-trail,.vp-speed-trail,.vp-scan-trail{display:none}.vp-world-card:hover .vp-world-card-art-core{transform:none}}
+
+
+/* ============================================================
+   VITPEERS FINAL VISUAL STABILITY + HOMEPAGE STARFIELD
+   ============================================================ */
+
+/* The Three.js canvas is atmosphere only. It must never cover content. */
+.vp-starfield {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .72;
+  mix-blend-mode: screen;
+}
+.vp-home-shell,
+.vp-home-section,
+.vp-hero {
+  position: relative;
+}
+.vp-home-shell > .vp-starfield { z-index: 0; }
+.vp-home-shell > .vp-home-section,
+.vp-home-shell > .vp-home-trust-wrap,
+.vp-home-shell > footer {
+  position: relative;
+  z-index: 1;
+}
+.vp-home-shell > .vp-home-section > * { position: relative; z-index: 2; }
+
+/* Minimal really is minimal: warm light canvas, readable ink, no accidental
+   dark "final polish" surface leaking into the default world. */
+[data-theme="minimal"] .vp-home-shell {
+  background: #FFF9ED !important;
+  color: #201A32;
+}
+[data-theme="minimal"] .vp-home-section {
+  background: rgba(255,249,237,.86) !important;
+}
+[data-theme="minimal"] .vp-floating-panel {
+  background: rgba(255,253,248,.88) !important;
+  border-color: #E8E0D3 !important;
+  box-shadow: 0 24px 70px rgba(54,31,93,.09) !important;
+}
+[data-theme="minimal"] .vp-home-shell .section-title,
+[data-theme="minimal"] .vp-home-shell .vp-floating-panel h2,
+[data-theme="minimal"] .vp-home-shell .vp-floating-panel h3 {
+  color: #21153F !important;
+}
+[data-theme="minimal"] .vp-home-shell .body-copy,
+[data-theme="minimal"] .vp-home-shell .vp-floating-panel .text-ink\/60 {
+  color: rgba(32,26,50,.68) !important;
+}
+[data-theme="minimal"] .vp-home-trust-wrap .vp-trust {
+  background: rgba(255,253,248,.95) !important;
+  color: #201A32 !important;
+  border-color: #E8E0D3 !important;
+}
+[data-theme="minimal"] .vp-home-trust-wrap .text-navy { color:#21153F !important; }
+[data-theme="minimal"] .vp-home-trust-wrap .text-ink\/50 { color:rgba(32,26,50,.5) !important; }
+[data-theme="minimal"] .vp-starfield { opacity:.22; mix-blend-mode:multiply; }
+
+/* No section should animate into existence while the user scrolls. */
+.vp-home-shell .scroll-reveal,
+.vp-home-shell .reveal,
+.vp-home-shell .scroll-reveal.is-visible,
+.vp-home-shell .reveal.reveal-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Dark worlds: keep the same information architecture, but make the visual
+   identity unmistakable instead of leaving the default purple hero art. */
+[data-theme="spider"] .vp-home-shell .vp-hero {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255,59,59,.20), transparent 28%),
+    radial-gradient(circle at 15% 80%, rgba(60,90,255,.18), transparent 30%),
+    #070912 !important;
+}
+[data-theme="spider"] .vp-home-shell .vp-hero::before {
+  background: #FF3B3B !important;
+  opacity: .18 !important;
+  filter: blur(34px);
+}
+[data-theme="spider"] .vp-home-shell .vp-hero::after {
+  background: #3C5AFF !important;
+  opacity: .14 !important;
+  filter: blur(30px);
+}
+[data-theme="spider"] .vp-home-shell .vp-visual-card {
+  background: rgba(16,16,27,.88) !important;
+  border: 1px solid rgba(255,59,59,.28) !important;
+  box-shadow: 0 28px 90px rgba(0,0,0,.55), 4px 4px 0 rgba(255,59,59,.10) !important;
+}
+[data-theme="spider"] .vp-home-shell .vp-visual-card > div {
+  color: #F4F2FF;
+}
+[data-theme="spider"] .vp-home-shell .vp-visual-card .bg-\[\#F7F0FF\] {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,59,59,.12), transparent 35%),
+    #10101b !important;
+  border: 1px solid rgba(255,59,59,.14);
+}
+[data-theme="spider"] .vp-home-shell .vp-visual-card .bg-white {
+  background: #F4F2FF !important;
+  color: #171226 !important;
+}
+[data-theme="spider"] .vp-home-shell .vp-hero-title { color:#F7F5FF !important; }
+[data-theme="spider"] .vp-home-shell .vp-hero-copy { color:rgba(244,242,255,.70) !important; }
+[data-theme="spider"] .vp-starfield { opacity:.48; }
+[data-theme="spider"] .vp-home-shell .vp-stat {
+  background: rgba(18,17,29,.90) !important;
+  border-color: rgba(255,59,59,.18) !important;
+}
+[data-theme="spider"] .vp-home-shell .vp-stat p:last-child { color:rgba(244,242,255,.58) !important; }
+
+[data-theme="f1"] .vp-home-shell .vp-hero {
+  background:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.025) 0 2px, transparent 2px 28px),
+    radial-gradient(circle at 80% 15%, rgba(225,6,0,.20), transparent 26%),
+    #060607 !important;
+}
+[data-theme="f1"] .vp-home-shell .vp-visual-card {
+  background: rgba(13,13,15,.94) !important;
+  border-color: rgba(225,6,0,.28) !important;
+  border-radius: .8rem !important;
+  box-shadow: 0 30px 90px rgba(0,0,0,.65), 0 0 35px rgba(225,6,0,.08) !important;
+}
+[data-theme="f1"] .vp-home-shell .vp-visual-card .bg-\[\#F7F0FF\] {
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.025) 0 2px, transparent 2px 18px),
+    #0d0d10 !important;
+}
+[data-theme="f1"] .vp-home-shell .vp-visual-card .bg-white {
+  background:#F4F4F4 !important;
+  color:#101014 !important;
+}
+[data-theme="f1"] .vp-home-shell .vp-hero-title { color:#F5F5F5 !important; font-family:"Orbitron","Space Grotesk",sans-serif !important; }
+[data-theme="f1"] .vp-home-shell .vp-hero-copy { color:rgba(244,244,244,.68) !important; }
+[data-theme="f1"] .vp-starfield { opacity:.40; }
+
+[data-theme="cyber"] .vp-home-shell .vp-hero {
+  background:
+    linear-gradient(rgba(178,75,255,.07) 1px, transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg, rgba(84,217,255,.045) 1px, transparent 1px) 0 0/32px 32px,
+    radial-gradient(circle at 75% 15%, rgba(178,75,255,.22), transparent 30%),
+    #08050f !important;
+}
+[data-theme="cyber"] .vp-home-shell .vp-visual-card {
+  background: rgba(17,8,31,.88) !important;
+  border-color: rgba(178,75,255,.35) !important;
+  box-shadow: 0 0 70px rgba(178,75,255,.12), inset 0 0 30px rgba(84,217,255,.025) !important;
+}
+[data-theme="cyber"] .vp-home-shell .vp-visual-card .bg-\[\#F7F0FF\] {
+  background:
+    linear-gradient(rgba(178,75,255,.07) 1px, transparent 1px) 0 0/22px 22px,
+    linear-gradient(90deg, rgba(84,217,255,.04) 1px, transparent 1px) 0 0/22px 22px,
+    #10081d !important;
+}
+[data-theme="cyber"] .vp-home-shell .vp-visual-card .bg-white {
+  background:#EEE9FF !important;
+  color:#160B29 !important;
+}
+[data-theme="cyber"] .vp-home-shell .vp-hero-title { color:#F4F0FF !important; font-family:"JetBrains Mono","Space Grotesk",sans-serif !important; }
+[data-theme="cyber"] .vp-home-shell .vp-hero-copy { color:rgba(232,226,255,.70) !important; }
+[data-theme="cyber"] .vp-starfield { opacity:.45; }
+
+/* Calls: status pills must always have an explicit foreground/background pair. */
+.vp-race-status {
+  color:#21153F !important;
+  background:#F5F5F6 !important;
+  border:1px solid rgba(33,21,63,.10);
+}
+[data-theme="spider"] .vp-race-status {
+  color:#FFF !important;
+  background:#2A0F16 !important;
+  border-color:rgba(255,59,59,.35) !important;
+}
+[data-theme="f1"] .vp-race-status {
+  color:#FFF !important;
+  background:#250608 !important;
+  border-color:rgba(225,6,0,.35) !important;
+}
+[data-theme="cyber"] .vp-race-status {
+  color:#E8E2FF !important;
+  background:#26113E !important;
+  border-color:rgba(178,75,255,.40) !important;
+}
+
+/* Profile edit: never clip the top of the form on short viewports. */
+.vp-page-shell-narrow {
+  min-height: calc(100vh - 4rem);
+  overflow: visible !important;
+}
+.vp-page-shell-narrow > div {
+  padding-top: 2.25rem !important;
+}
+@media (max-width: 640px) {
+  .vp-page-shell-narrow > div {
+    padding-top: 1.25rem !important;
+  }
+  .vp-starfield { opacity:.16; }
+}
+
+/* Preserve a usable cursor/touch experience on small screens. */
+@media (max-width: 700px) {
+  .vp-starfield { opacity:.14 !important; }
+}
+
+/* Individual star dot for the pure-CSS StarfieldBackground. */
+.vp-star {
+  position: absolute;
+  border-radius: 999px;
+  background: #ffffff;
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+[data-theme="minimal"] .vp-star { background: #21153F; }
+@media (prefers-reduced-motion: reduce) {
+  .vp-star { animation: none; opacity: .6; }
+}
