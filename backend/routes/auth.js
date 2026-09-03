@@ -6,7 +6,7 @@ import User from "../models/User.js";
 import PasswordReset from "../models/PasswordReset.js";
 import EmailVerification from "../models/EmailVerification.js";
 import { isCollegeEmail } from "../utils/validators.js";
-import { createMailer, sendVerificationEmail } from "../utils/mailer.js";
+import { sendVerificationEmail } from "../utils/mailer.js";
 
 const router = express.Router();
 
@@ -190,13 +190,21 @@ router.post("/login", async (req, res) => {
 
 router.get("/email-status", async (req, res) => {
   try {
-    const transporter = createMailer();
-    if (!transporter) return res.status(503).json({ configured: false, message: "SMTP email settings are missing in .env" });
-    await transporter.verify();
-    res.json({ configured: true, message: "SMTP connection is ready." });
+    const apiKey = process.env.BREVO_API_KEY;
+    const fromAddress = process.env.EMAIL_FROM_ADDRESS;
+    if (!apiKey || !fromAddress) {
+      return res.status(503).json({ configured: false, message: "BREVO_API_KEY or EMAIL_FROM_ADDRESS is missing in .env" });
+    }
+    const response = await fetch("https://api.brevo.com/v3/account", {
+      headers: { Accept: "application/json", "api-key": apiKey },
+    });
+    if (!response.ok) {
+      return res.status(503).json({ configured: false, message: "Brevo rejected the API key. Double-check BREVO_API_KEY." });
+    }
+    res.json({ configured: true, message: "Brevo API connection is ready." });
   } catch (err) {
-    console.error("SMTP verification error:", err.message);
-    res.status(503).json({ configured: false, message: "SMTP is configured but the mail server rejected the connection. Check EMAIL_USER, EMAIL_PASS, EMAIL_PORT and EMAIL_SECURE." });
+    console.error("Brevo verification error:", err.message);
+    res.status(503).json({ configured: false, message: "Could not reach Brevo's API. Check your internet connection and BREVO_API_KEY." });
   }
 });
 
@@ -220,9 +228,6 @@ router.post("/forgot-password", async (req, res) => {
       expiresAt: new Date(Date.now() + 10 * 60 * 1000),
     });
 
-    // Dev safety net: always log the code server-side so you can test the flow
-    // even while diagnosing email deliverability separately. This is never
-    // exposed to the browser/client — only visible in your own terminal.
     console.log(`🔑 Password reset code for ${email}: ${code}`);
 
     await sendResetCode(email, code);
